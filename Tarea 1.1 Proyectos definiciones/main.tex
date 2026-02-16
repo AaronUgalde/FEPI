@@ -1,0 +1,144 @@
+\documentclass[12pt]{article}
+
+% --- Paquetes de Idioma y Codificación ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish, es-tabla]{babel}
+
+% --- Fuente Estilo Arial (Helvetica) ---
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% --- Configuración de Márgenes (2.5 cm por lado) ---
+\usepackage[margin=2.5cm]{geometry}
+
+% --- Interlineado (1.5) ---
+\usepackage{setspace}
+\onehalfspacing
+
+% --- Otros Paquetes ---
+\usepackage{graphicx} % Para logos
+\usepackage{titlesec} % Formato de títulos
+\usepackage{fancyhdr} % Numeración de páginas
+\usepackage{indentfirst} % Sangría en el primer párrafo
+\usepackage{microtype} % Mejoras en el justificado
+\usepackage{cite} % Para mejorar las citas en estilo IEEE
+\usepackage{url} % Para URLs en la bibliografía
+
+% --- Configuración de Justificado y Párrafos ---
+\emergencystretch 1em
+\usepackage{ragged2e} % Para asegurar el justificado
+
+% --- Configuración de Numeración ---
+\pagestyle{plain} % Numeración sencilla en el pie de página
+
+\begin{document}
+
+% ==========================================
+% CARÁTULA
+% ==========================================
+\begin{titlepage}
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{flushleft}
+                \includegraphics[width=3cm]{img/ipn.jpg} 
+            \end{flushleft}
+        \end{minipage}
+        \begin{minipage}{0.45\textwidth}
+            \begin{flushright}
+                \includegraphics[width=3cm]{img/ESCOM.png} 
+            \end{flushright}
+        \end{minipage}
+        
+        \vspace{2cm}
+        
+        {\Large \textbf{Instituto Politécnico Nacional}} \\
+        {\Large \textbf{Escuela Superior de Cómputo}} \\
+        
+        \vspace{2.5cm}
+        
+        {\large Materia:} \\
+        {\Large \textbf{Formulación y Evaluación de Proyectos Informáticos}} \\
+        
+        \vspace{1.5cm}
+        
+        {\large Actividad/Tarea:} \\
+        {\Large \textbf{Tarea 1.1: Proyectos definiciones}} \\
+        
+        \vspace{2.5cm}
+        
+        {\large Presenta:} \\
+        {\Large \textbf{Aarón Ugalde Téllez}} \\ 
+        
+        \vfill
+        
+        {\large Grupo:} \textbf{7BV1} \\
+        {\large Fecha de entrega:} \textbf{\today}
+        
+    \end{center}
+\end{titlepage}
+
+% ==========================================
+% ÍNDICE
+% ==========================================
+\pagenumbering{roman} 
+\tableofcontents
+\newpage
+
+% ==========================================
+% CONTENIDO
+% ==========================================
+\pagenumbering{arabic} 
+\justifying 
+
+\section{Introducción}
+El desarrollo de soluciones tecnológicas en la actualidad exige no solo habilidades técnicas de programación, sino también una estructura metodológica sólida que garantice la viabilidad de las propuestas. En el ámbito de la ingeniería, la transición de una idea hacia un producto funcional requiere comprender profundamente qué constituye un proyecto y cómo este se diferencia cuando su núcleo es la gestión de la información.
+
+El presente documento tiene como objetivo explorar los conceptos fundamentales de la formulación y evaluación de proyectos informáticos. A través de una revisión teórica, se definen los elementos que integran un proyecto, su ciclo de vida y la importancia de la evaluación como herramienta para la toma de decisiones estratégicas. Esta base conceptual es esencial para cualquier profesional del software que busque transformar necesidades organizacionales en sistemas eficientes, rentables y sostenibles.
+
+\section{Indagación}
+
+\subsection{Proyecto}
+Un proyecto se define como un conjunto de actividades por realizar en un tiempo determinado, mediante una combinación de recursos humanos, físicos y financieros con costos determinados, orientados a producir un cambio en una entidad a través de la concreción de las metas establecidas. \cite{gonzalez2009guia}
+
+\subsection{Proyecto informático}
+Un proyecto informático es un sistema de cursos de acción simultáneos o secuenciales que incluye personas, equipamiento de hardware, software y comunicaciones, enfocados en obtener uno o más resultados deseables sobre un sistema de información. \cite{adrian2025proyectos}
+
+\subsubsection{Elementos de un proyecto}
+De acuerdo con la \textit{Guía para la Formulación de Proyectos} \cite{gonzalez2009guia}, un proyecto debe contener los siguientes elementos:
+
+\begin{enumerate}
+    \item \textbf{Datos de identificación del proyecto:} Incluye el título, tipo de proyecto, origen, antecedentes, fuente de financiamiento y responsable.
+    \item \textbf{Justificación o fundamentación:} Se explica la importancia del proyecto, el problema que atiende y su alineación con el desarrollo institucional.
+    \item \textbf{Objetivos:} Definición del objetivo general y los objetivos específicos.
+    \item \textbf{Estrategias:} Descripción de las metodologías para lograr los objetivos.
+    \item \textbf{Metas:} Resultados cuantificables con unidades de medida y tiempo definido.
+    \item \textbf{Actividades:} Tareas necesarias para cumplir las metas.
+    \item \textbf{Cronograma:} Calendario de ejecución.
+    \item \textbf{Recursos de soporte:} Personal e infraestructura disponible.
+    \item \textbf{Presupuesto y financiamiento:} Costos y fuentes de recursos.
+    \item \textbf{Previsiones para el seguimiento y evaluación:} Indicadores y mecanismos para verificar el cumplimiento de resultados.
+\end{enumerate}
+
+\subsection{Evaluación de proyecto}
+La evaluación es el proceso de medir la conveniencia de ejecutar un proyecto utilizando criterios técnicos, económicos, financieros y sociales. Se distingue que, si bien el análisis económico es fundamental, factores políticos, humanitarios o ambientales pueden primar en la toma de decisiones. \cite{sapag2001evaluacion}
+
+\subsection{Formulación de proyecto}
+La formulación de proyectos consiste en el proceso mediante el cual una idea se perfecciona hasta transformarse en una propuesta técnica y financieramente viable. Este proceso implica la identificación de una necesidad u oportunidad, el análisis de diversas alternativas de solución y la definición precisa de los recursos, actividades y plazos necesarios para alcanzar los objetivos planteados. \cite{ucc2025formulacion}
+
+\subsection{Ciclo de vida de un proyecto}
+El PMBOK\cite{estruga2025guia} Guide define a los proyectos como “un esfuerzo temporal que se lleva a cabo para crear un producto, servicio o resultado único”. Por tanto, el ciclo de vida del proyecto comprende las distintas fases por las que atraviesa el mismo, desde su inicio hasta su conclusión. Estos ciclos proporcionan el marco de referencia indispensable para la dirección del proyecto.
+
+\section{Conclusión}
+A partir de la indagación realizada, se concluye que un proyecto informático es un sistema complejo donde interactúan el factor humano, los recursos tecnológicos y las restricciones financieras. La correcta formulación representa la etapa crítica donde se minimiza la incertidumbre, permitiendo que las metas establecidas sean realistas y medibles.
+
+Asimismo, queda de manifiesto que la evaluación constante, desde la etapa de prefactibilidad hasta el cierre, permite determinar si un esfuerzo temporal aporta valor real a una entidad. Para un estudiante de ingeniería, el dominio de marcos de referencia como el PMBOK es vital para asegurar que los sistemas desarrollados sean técnicamente correctos, viables y exitosos en el entorno profesional.
+
+% ==========================================
+% REFERENCIAS (Estilo IEEE)
+% ==========================================
+\newpage
+\bibliographystyle{IEEEtran} 
+\bibliography{bibliografia} 
+
+\end{document}

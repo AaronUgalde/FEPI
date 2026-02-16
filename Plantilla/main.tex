@@ -1,0 +1,118 @@
+\documentclass[12pt]{article}
+
+% --- Paquetes de Idioma y Codificación ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish, es-tabla]{babel}
+
+% --- Fuente Estilo Arial (Helvetica) ---
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% --- Configuración de Márgenes (2.5 cm por lado) ---
+\usepackage[margin=2.5cm]{geometry}
+
+% --- Interlineado (1.5) ---
+\usepackage{setspace}
+\onehalfspacing
+
+% --- Otros Paquetes ---
+\usepackage{graphicx} % Para logos
+\usepackage{titlesec} % Formato de títulos
+\usepackage{fancyhdr} % Numeración de páginas
+\usepackage{indentfirst} % Sangría en el primer párrafo
+\usepackage{microtype} % Mejoras en el justificado
+\usepackage{cite} % Para mejorar las citas en estilo IEEE
+\usepackage{url} % Para URLs en la bibliografía
+
+% --- Configuración de Justificado y Párrafos ---
+\emergencystretch 1em
+\usepackage{ragged2e} % Para asegurar el justificado
+
+% --- Configuración de Numeración ---
+\pagestyle{plain} % Numeración sencilla en el pie de página
+
+\begin{document}
+
+% ==========================================
+% CARÁTULA
+% ==========================================
+\begin{titlepage}
+    \begin{center}
+        % Logos (Sustituye 'logo_inst' y 'logo_esc' con tus archivos de imagen)
+        \begin{minipage}{0.45\textwidth}
+            \begin{flushleft}
+                \includegraphics[width=3cm]{img/ipn.jpg} 
+            \end{flushleft}
+        \end{minipage}
+        \begin{minipage}{0.45\textwidth}
+            \begin{flushright}
+                \includegraphics[width=3cm]{img/ESCOM.png} 
+            \end{flushright}
+        \end{minipage}
+        
+        \vspace{2cm}
+        
+        {\Large \textbf{Instituto Politecnico Nacional}} \\
+        {\Large \textbf{Escuela superior de computo}} \\
+        
+        \vspace{2.5cm}
+        
+        {\large Materia:} \\
+        {\Large \textbf{Formulación y evaluación de Proyectos Informáticos}} \\
+        
+        \vspace{1.5cm}
+        
+        {\large Actividad/Tarea:} \\
+        {\Large \textbf{Título de la Actividad o Tarea}} \\
+        
+        \vspace{2.5cm}
+        
+        {\large Presenta:} \\
+        {\Large \textbf{Aarón Ugalde Téllez}} \\ % O nombre del equipo
+        
+        \vfill
+        
+        {\large Grupo:} \textbf{7BV1} \\
+        {\large Fecha de entrega:} \textbf{\today}
+        
+    \end{center}
+\end{titlepage}
+
+% ==========================================
+% ÍNDICE
+% ==========================================
+\pagenumbering{roman} % Números romanos para el índice
+\tableofcontents
+\newpage
+
+% ==========================================
+% CONTENIDO
+% ==========================================
+\pagenumbering{arabic} % Volver a números arábigos
+\justifying % Asegura que el texto esté justificado
+
+\section{Introducción}
+Aquí va la introducción de tu trabajo. Recuerda que el interlineado es de 1.5 y la fuente es similar a Arial en tamaño 12, tal como se solicitó.
+
+Para citar una referencia, usa el comando \verb|\cite{clave}|. Por ejemplo, puedes citar un artículo así \cite{ejemplo_articulo} o un libro \cite{ejemplo_libro}.
+
+\section{Contenido}
+Este es el cuerpo principal de tu documento. Puedes dividirlo en subsecciones si lo necesitas.
+
+También puedes citar múltiples referencias a la vez \cite{ejemplo_conferencia, ejemplo_web}.
+
+\subsection{Planteamiento}
+Desarrollo de los puntos clave del proyecto o tarea. Aquí puedes referenciar una tesis \cite{ejemplo_tesis}.
+
+\section{Conclusión}
+Reflexiones finales sobre el trabajo realizado.
+
+% ==========================================
+% REFERENCIAS (Estilo IEEE)
+% ==========================================
+\newpage
+\bibliographystyle{IEEEtran} % Estilo IEEE para la bibliografía
+\bibliography{bibliografia} % Archivo bibliografia.bib (sin la extensión)
+
+\end{document}
