@@ -1,0 +1,147 @@
+\documentclass[12pt]{article}
+
+% --- Paquetes de Idioma y Codificación ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish, es-tabla]{babel}
+
+% --- Fuente Estilo Arial (Helvetica) ---
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% --- Configuración de Márgenes (2.5 cm por lado) ---
+\usepackage[margin=2.5cm]{geometry}
+
+% --- Interlineado (1.5) ---
+\usepackage{setspace}
+\onehalfspacing
+
+% --- Otros Paquetes ---
+\usepackage{graphicx} 
+\usepackage{titlesec} 
+\usepackage{fancyhdr} 
+\usepackage{indentfirst} 
+\usepackage{microtype} 
+\usepackage{cite} 
+\usepackage{url} 
+
+% --- Configuración de Justificado y Párrafos ---
+\emergencystretch 1em
+\usepackage{ragged2e} 
+
+% --- Configuración de Numeración ---
+\pagestyle{plain} 
+
+\begin{document}
+
+% ==========================================
+% CARÁTULA
+% ==========================================
+\begin{titlepage}
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{flushleft}
+                \includegraphics[width=3cm]{img/ipn.jpg} 
+            \end{flushleft}
+        \end{minipage}
+        \begin{minipage}{0.45\textwidth}
+            \begin{flushright}
+                \includegraphics[width=3cm]{img/ESCOM.png} 
+            \end{flushright}
+        \end{minipage}
+        
+        \vspace{2cm}
+        
+        {\Large \textbf{Instituto Politécnico Nacional}} \\
+        {\Large \textbf{Escuela Superior de Cómputo}} \\
+        
+        \vspace{2.5cm}
+        
+        {\large Materia:} \\
+        {\Large \textbf{Formulación y Evaluación de Proyectos Informáticos}} \\
+        
+        \vspace{1.5cm}
+        
+        {\large Actividad/Tarea:} \\
+        {\Large \textbf{Tarea 1.2: Alcance del proyecto}} \\
+        
+        \vspace{2.5cm}
+        
+        {\large Presenta:} \\
+        {\Large \textbf{Aarón Ugalde Téllez}} \\ 
+        
+        \vfill
+        
+        {\large Grupo:} \textbf{7BV1} \\
+        {\large Fecha de entrega:} \textbf{\today}
+        
+    \end{center}
+\end{titlepage}
+
+% ==========================================
+% ÍNDICE
+% ==========================================
+\pagenumbering{roman} 
+\tableofcontents
+\newpage
+
+% ==========================================
+% CONTENIDO
+% ==========================================
+\pagenumbering{arabic} 
+\justifying 
+
+\section{Introducción}
+A todos nos ha pasado: empiezas un proyecto con una idea clara y, de pronto, terminas haciendo mil cosas que no estaban planeadas. En el mundo de la ingeniería, esto puede ser un desastre total. Por eso existe la gestión del alcance. Básicamente, es la herramienta que nos ayuda a poner límites, definiendo qué entra en el trabajo y, casi más importante, qué se queda fuera. 
+
+En este documento vamos a platicar sobre cómo el estándar PMBOK nos enseña a controlar ese caos, diferenciando lo que el cliente recibe (el producto) de todo el esfuerzo que nosotros hacemos detrás de cámaras (el proyecto). Además, daremos un vistazo a las herramientas que nos salvan la vida para que el alcance no crezca sin control.
+
+\section{Indagación}
+
+\subsection{Alcance del Producto}
+Cuando hablamos de alcance del producto, nos referimos meramente a las características y funciones que describen el resultado final. Es el qué estamos entregando \cite{pmi2017}.
+
+
+\begin{itemize}
+    \item \textbf{Enfoque:} Se centra en el entregable final para el usuario.
+    \item \textbf{Medición:} Se sabe que se cumplió si el resultado final coincide con los requisitos que definimos al principio.
+    \item \textbf{Ejemplos:} Que el software tenga un botón de login, que el servidor soporte 10,000 usuarios o que la interfaz sea color azul.
+\end{itemize}
+
+\subsection{Alcance del Proyecto}
+A diferencia del anterior, este se trata de todo el trabajo que hay que hacer para que ese producto exista. Es el cómo vamos a llegar a la meta \cite{pmi2017}.
+
+\begin{itemize}
+    \item \textbf{Enfoque:} Se centra en los procesos, la gestión y las tareas de ingeniería.
+    \item \textbf{Medición:} Se mide comparando el progreso real contra el plan para la dirección del proyecto.
+    \item \textbf{Componentes:} Incluye desde juntas administrativas hasta el desarrollo de código y pruebas de calidad.
+\end{itemize}
+
+\subsection{Herramientas para Estimar y Definir el Alcance}
+Para no perdernos en el camino, el PMBOK nos sugiere varias técnicas que transforman ideas vagas en una lista detallada de tareas \cite{pmi2017}:
+
+\begin{enumerate}
+    \item \textbf{Estructura de Desglose del Trabajo (EDT/WBS):} Es como un árbol genealógico del proyecto. Divide el trabajo total en partes pequeñas y manejables. Si no está en la EDT, no es parte del proyecto.
+    \item \textbf{Análisis de Producto:} Desmenuzamos el entregable para entender sus componentes físicos o funcionales.
+    \item \textbf{Ingeniería de Valor:} Buscamos cómo hacer lo mismo pero mejor o más barato, sin sacrificar la calidad.
+    \item \textbf{Matriz de Trazabilidad de Requisitos:} Una tabla para asegurar que cada requisito tenga una razón de ser y se cumpla en el producto final.
+    \item \textbf{Prototipos:} Modelos rápidos para que el cliente nos diga "sí, eso es lo que quería" antes de gastar todo el presupuesto.
+    \item \textbf{Sistemas de Estimación y Modelado (SEER):} Software que usa datos históricos para predecir cuánto esfuerzo nos va a tomar el proyecto.
+\end{enumerate}
+
+\section{Conclusión}
+Al final del día, entender la diferencia entre el alcance del producto y el del proyecto es lo que separa a un desarrollador de un verdadero director de proyectos. No se trata solo de programar bien, sino de saber poner una cerca alrededor de nuestro trabajo para evitar el famoso \textit{scope creep} (esa expansión infinita de tareas que nunca termina). 
+
+Usar herramientas como la EDT no es solo burocracia; es la manera en que nos aseguramos de que nuestro esfuerzo realmente aporte valor y que el proyecto termine a tiempo, sin que nadie se vuelva loco en el proceso.
+
+% ==========================================
+% REFERENCIAS
+% ==========================================
+\newpage
+\begin{thebibliography}{99}
+
+\bibitem{pmi2017} Project Management Institute, \textit{Guía de los fundamentos para la dirección de proyectos (Guía del PMBOK®)}, 6.ª ed. Newtown Square, PA: PMI, 2017.
+
+\end{thebibliography}
+
+\end{document}
