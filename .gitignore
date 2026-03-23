@@ -1,0 +1,19 @@
+# ============================================================
+#  .gitignore — FEPI / ESCOM
+# ============================================================
+
+# --- Archivos auxiliares de LaTeX ---
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# --- PDFs compilados (solo ignorar los generados, no los entregados) ---
+# Descomenta la siguiente línea si NO quieres versionar ningún PDF:
+# *.pdf
+

@@ -1,118 +1,277 @@
-\documentclass[12pt]{article}
+% ============================================================
+%  PLANTILLA FEPI — ESCOM / IPN
+%  Autor original: Aarón Ugalde Téllez
+%  Última actualización: \today
+% ============================================================
+%
+%  ╔══════════════════════════════════════════════════════╗
+%  ║          CONFIGURACIÓN RÁPIDA (EDITA AQUÍ)          ║
+%  ╚══════════════════════════════════════════════════════╝
+%
+%  Modifica SOLO esta sección antes de compilar.
+%  Todo lo demás se ajusta automáticamente.
+%
 
-% --- Paquetes de Idioma y Codificación ---
+\newcommand{\alumno}{Aarón Ugalde Téllez}     % Nombre completo del alumno (o "Equipo X")
+\newcommand{\grupo}{7BV1}                      % Grupo
+\newcommand{\actividad}{Título de la Actividad o Tarea} % Nombre de la actividad/tarea
+\newcommand{\materia}{Formulación y Evaluación de Proyectos Informáticos}
+\newcommand{\profesor}{Gloria Lourdes Cabrera Chavez}    % Nombre del docente (opcional, borrar si no se necesita)
+\newcommand{\fechaEntrega}{\today}             % Fecha de entrega (\today = automática)
+
+% ============================================================
+%  NO MODIFICAR A PARTIR DE AQUÍ
+%  (a menos que sepas lo que haces)
+% ============================================================
+
+\documentclass[12pt, letterpaper]{article}
+
+% --- Idioma y Codificación ---
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[spanish, es-tabla]{babel}
+\usepackage[spanish, es-tabla, es-lcroman]{babel}
 
-% --- Fuente Estilo Arial (Helvetica) ---
+% --- Fuente: Arial / Helvetica ---
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 
-% --- Configuración de Márgenes (2.5 cm por lado) ---
-\usepackage[margin=2.5cm]{geometry}
+% --- Geometría de página (márgenes 2.5 cm) ---
+\usepackage[
+  top=2.5cm, bottom=2.5cm,
+  left=2.5cm, right=2.5cm,
+  headheight=15pt
+]{geometry}
 
-% --- Interlineado (1.5) ---
+% --- Interlineado 1.5 ---
 \usepackage{setspace}
 \onehalfspacing
 
-% --- Otros Paquetes ---
-\usepackage{graphicx} % Para logos
-\usepackage{titlesec} % Formato de títulos
-\usepackage{fancyhdr} % Numeración de páginas
-\usepackage{indentfirst} % Sangría en el primer párrafo
-\usepackage{microtype} % Mejoras en el justificado
-\usepackage{cite} % Para mejorar las citas en estilo IEEE
-\usepackage{url} % Para URLs en la bibliografía
+% --- Color y elementos visuales ---
+\usepackage[table,xcdraw]{xcolor}
+\definecolor{ipnRojo}{RGB}{139,0,20}       % Rojo institucional IPN
+\definecolor{ipnGris}{RGB}{80,80,80}       % Gris oscuro para subtítulos
+\definecolor{fondoTabla}{RGB}{245,245,245} % Fondo filas de tabla
 
-% --- Configuración de Justificado y Párrafos ---
+% --- Tipografía y formato de títulos ---
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\large\bfseries\color{ipnRojo}}
+  {\thesection.}{0.5em}{}[{\color{ipnRojo}\titlerule[0.6pt]}]
+
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{ipnGris}}
+  {\thesubsection}{0.5em}{}
+
+\titleformat{\subsubsection}
+  {\normalsize\itshape\color{ipnGris}}
+  {\thesubsubsection}{0.5em}{}
+
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+\titlespacing*{\subsection}{0pt}{12pt}{4pt}
+
+% --- Encabezado y pie de página ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\color{ipnGris}\textit{\materia}}
+\fancyhead[R]{\small\color{ipnGris}\textit{\actividad}}
+\fancyfoot[C]{\small\color{ipnGris}\thepage}
+
+% --- Índice con hipervínculos (sin bordes de colores al imprimir) ---
+\usepackage[
+  colorlinks=true,
+  linkcolor=ipnRojo,
+  urlcolor=ipnRojo,
+  citecolor=ipnRojo,
+  pdfborder={0 0 0}
+]{hyperref}
+
+% --- Otros paquetes de utilidad ---
+\usepackage{graphicx}      % Imágenes
+\usepackage{indentfirst}   % Sangría en primer párrafo de cada sección
+\usepackage{microtype}     % Mejor justificado
+\usepackage{cite}          % Citas IEEE
+\usepackage{url}           % URLs en bibliografía
+\usepackage{booktabs}      % Tablas profesionales
+\usepackage{ragged2e}      % Control de justificado
+\usepackage{caption}       % Formato de pies de figura/tabla
+\usepackage{parskip}       % Espacio entre párrafos sin sangría extra
+\usepackage{enumitem}      % Listas personalizadas
+
+% --- Configuración de pies de figura y tabla ---
+\captionsetup{
+  font=small,
+  labelfont={bf,color=ipnGris},
+  textfont=it
+}
+
+% --- Espaciado entre párrafos ---
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{1.2em}
+
 \emergencystretch 1em
-\usepackage{ragged2e} % Para asegurar el justificado
 
-% --- Configuración de Numeración ---
-\pagestyle{plain} % Numeración sencilla en el pie de página
-
+% ============================================================
+%  INICIO DEL DOCUMENTO
+% ============================================================
 \begin{document}
 
-% ==========================================
+% ----------------------------------------------------------
 % CARÁTULA
-% ==========================================
+% ----------------------------------------------------------
 \begin{titlepage}
-    \begin{center}
-        % Logos (Sustituye 'logo_inst' y 'logo_esc' con tus archivos de imagen)
-        \begin{minipage}{0.45\textwidth}
-            \begin{flushleft}
-                \includegraphics[width=3cm]{img/ipn.jpg} 
-            \end{flushleft}
-        \end{minipage}
-        \begin{minipage}{0.45\textwidth}
-            \begin{flushright}
-                \includegraphics[width=3cm]{img/ESCOM.png} 
-            \end{flushright}
-        \end{minipage}
-        
-        \vspace{2cm}
-        
-        {\Large \textbf{Instituto Politecnico Nacional}} \\
-        {\Large \textbf{Escuela superior de computo}} \\
-        
-        \vspace{2.5cm}
-        
-        {\large Materia:} \\
-        {\Large \textbf{Formulación y evaluación de Proyectos Informáticos}} \\
-        
-        \vspace{1.5cm}
-        
-        {\large Actividad/Tarea:} \\
-        {\Large \textbf{Título de la Actividad o Tarea}} \\
-        
-        \vspace{2.5cm}
-        
-        {\large Presenta:} \\
-        {\Large \textbf{Aarón Ugalde Téllez}} \\ % O nombre del equipo
-        
-        \vfill
-        
-        {\large Grupo:} \textbf{7BV1} \\
-        {\large Fecha de entrega:} \textbf{\today}
-        
-    \end{center}
+  \thispagestyle{empty}
+  \begin{center}
+
+    % --- Logos institucionales ---
+    \begin{minipage}[c]{0.45\textwidth}
+      \begin{flushleft}
+        \includegraphics[height=3.2cm,keepaspectratio]{../_compartido/img/ipn.jpg}
+      \end{flushleft}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.45\textwidth}
+      \begin{flushright}
+        \includegraphics[height=3.2cm,keepaspectratio]{../_compartido/img/ESCOM.png}
+      \end{flushright}
+    \end{minipage}
+
+    \vspace{0.4cm}
+    {\color{ipnRojo}\rule{\linewidth}{1.5pt}}
+    \vspace{0.3cm}
+
+    % --- Institución ---
+    {\Large\bfseries Instituto Politécnico Nacional}\\[4pt]
+    {\large\bfseries\color{ipnGris} Escuela Superior de Cómputo}
+
+    \vspace{1.8cm}
+
+    % --- Materia ---
+    {\small\color{ipnGris} Materia:}\\[4pt]
+    {\large\bfseries \materia}
+
+    \vspace{1.5cm}
+
+    % --- Actividad ---
+    {\small\color{ipnGris} Actividad / Tarea:}\\[6pt]
+    {\LARGE\bfseries\color{ipnRojo} \actividad}
+
+    \vfill
+
+    % --- Datos del alumno (cuadro centrado) ---
+    \begin{minipage}{0.75\linewidth}
+      \centering
+      \setlength{\arrayrulewidth}{0.5pt}
+      \renewcommand{\arraystretch}{1.5}
+      \begin{tabular}{rl}
+        \textbf{Alumno:}          & \alumno          \\
+        \textbf{Grupo:}           & \grupo           \\
+        \textbf{Profesor:}        & \profesor        \\
+        \textbf{Fecha de entrega:}& \fechaEntrega    \\
+      \end{tabular}
+    \end{minipage}
+
+    \vspace{1cm}
+    {\color{ipnRojo}\rule{\linewidth}{1.5pt}}
+
+  \end{center}
 \end{titlepage}
 
-% ==========================================
-% ÍNDICE
-% ==========================================
-\pagenumbering{roman} % Números romanos para el índice
+% ----------------------------------------------------------
+% ÍNDICE  (números romanos)
+% ----------------------------------------------------------
+\pagenumbering{roman}
+\setcounter{page}{1}
+\renewcommand{\contentsname}{Índice de Contenido}
 \tableofcontents
 \newpage
 
-% ==========================================
-% CONTENIDO
-% ==========================================
-\pagenumbering{arabic} % Volver a números arábigos
-\justifying % Asegura que el texto esté justificado
+% ----------------------------------------------------------
+% CONTENIDO  (números arábigos)
+% ----------------------------------------------------------
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\justifying
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%  EMPIEZA TU DOCUMENTO AQUÍ
+%  Modifica o elimina las secciones de ejemplo según necesites
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 \section{Introducción}
-Aquí va la introducción de tu trabajo. Recuerda que el interlineado es de 1.5 y la fuente es similar a Arial en tamaño 12, tal como se solicitó.
 
-Para citar una referencia, usa el comando \verb|\cite{clave}|. Por ejemplo, puedes citar un artículo así \cite{ejemplo_articulo} o un libro \cite{ejemplo_libro}.
+Aquí va la introducción de tu trabajo. Presenta brevemente el tema, el contexto y el objetivo de la actividad. El interlineado es de 1.5 y la fuente es equivalente a Arial 12, conforme a los lineamientos de la materia.
 
-\section{Contenido}
-Este es el cuerpo principal de tu documento. Puedes dividirlo en subsecciones si lo necesitas.
+Para citar una referencia usa \verb|\cite{clave}|, por ejemplo~\cite{ejemplo_articulo}. Para múltiples citas usa~\cite{ejemplo_libro, ejemplo_conferencia}.
 
-También puedes citar múltiples referencias a la vez \cite{ejemplo_conferencia, ejemplo_web}.
+\section{Desarrollo}
 
-\subsection{Planteamiento}
-Desarrollo de los puntos clave del proyecto o tarea. Aquí puedes referenciar una tesis \cite{ejemplo_tesis}.
+Este es el cuerpo principal del documento. Puedes dividirlo en subsecciones.
+
+\subsection{Planteamiento del problema}
+
+Describe el problema o contexto que motiva la actividad o proyecto. Apóyate en referencias cuando sea necesario~\cite{ejemplo_tesis}.
+
+\subsection{Propuesta / Metodología}
+
+Explica el enfoque, herramientas o metodología utilizada. Puedes incluir listas:
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item Primer elemento de la lista.
+  \item Segundo elemento.
+  \item Tercer elemento.
+\end{itemize}
+
+O listas numeradas:
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
+  \item Paso uno.
+  \item Paso dos.
+  \item Paso tres.
+\end{enumerate}
+
+\subsection{Resultados}
+
+Presenta los resultados o análisis obtenidos. Puedes usar tablas:
+
+\begin{table}[htbp]
+  \centering
+  \caption{Ejemplo de tabla con formato profesional}
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{@{}lcc@{}}
+    \toprule
+    \textbf{Elemento} & \textbf{Valor A} & \textbf{Valor B} \\
+    \midrule
+    \rowcolor{fondoTabla} Ítem 1 & 100 & 200 \\
+    Ítem 2 & 150 & 175 \\
+    \rowcolor{fondoTabla} Ítem 3 & 90  & 210 \\
+    \bottomrule
+  \end{tabular}
+  \label{tab:ejemplo}
+\end{table}
+
+O figuras:
+
+% Descomenta y adapta cuando tengas una imagen:
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=0.7\linewidth]{img/tu_imagen.png}
+%   \caption{Descripción de la figura.}
+%   \label{fig:ejemplo}
+% \end{figure}
 
 \section{Conclusión}
-Reflexiones finales sobre el trabajo realizado.
 
-% ==========================================
-% REFERENCIAS (Estilo IEEE)
-% ==========================================
+Sintetiza los hallazgos y reflexiones finales. Relaciona los resultados con los objetivos planteados en la introducción.
+
+% ----------------------------------------------------------
+% REFERENCIAS  (Estilo IEEE)
+% ----------------------------------------------------------
 \newpage
-\bibliographystyle{IEEEtran} % Estilo IEEE para la bibliografía
-\bibliography{bibliografia} % Archivo bibliografia.bib (sin la extensión)
+\bibliographystyle{IEEEtran}
+\bibliography{../_compartido/bibliografia}   % Apunta al archivo bibliografia.bib
 
 \end{document}
