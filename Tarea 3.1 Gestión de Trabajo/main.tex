@@ -1,0 +1,402 @@
+% ============================================================
+%  PLANTILLA FEPI — ESCOM / IPN
+%  Tarea 3.1: Gestión de Trabajo
+% ============================================================
+
+\newcommand{\alumno}{Aarón Ugalde Téllez}
+\newcommand{\grupo}{7BV1}
+\newcommand{\actividad}{Tarea 3.1 Gestión de Trabajo}
+\newcommand{\materia}{Formulación y Evaluación de Proyectos Informáticos}
+\newcommand{\profesor}{Gloria Lourdes Cabrera Chavez}
+\newcommand{\fechaEntrega}{\today}
+
+% ============================================================
+\documentclass[12pt, letterpaper]{article}
+
+% --- Idioma y Codificación ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish, es-tabla, es-lcroman]{babel}
+
+% --- Fuente: Arial / Helvetica ---
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% --- Geometría de página (márgenes 2.5 cm) ---
+\usepackage[
+  top=2.5cm, bottom=2.5cm,
+  left=2.5cm, right=2.5cm,
+  headheight=15pt
+]{geometry}
+
+% --- Interlineado 1.5 ---
+\usepackage{setspace}
+\onehalfspacing
+
+% --- Color y elementos visuales ---
+\usepackage[table,xcdraw]{xcolor}
+\definecolor{ipnRojo}{RGB}{139,0,20}
+\definecolor{ipnGris}{RGB}{80,80,80}
+\definecolor{fondoTabla}{RGB}{245,245,245}
+
+% --- Tipografía y formato de títulos ---
+\usepackage{titlesec}
+\titleformat{\section}
+  {\large\bfseries\color{ipnRojo}}
+  {\thesection.}{0.5em}{}[{\color{ipnRojo}\titlerule[0.6pt]}]
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{ipnGris}}
+  {\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}
+  {\normalsize\itshape\color{ipnGris}}
+  {\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+\titlespacing*{\subsection}{0pt}{12pt}{4pt}
+
+% --- Encabezado y pie de página ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\color{ipnGris}\textit{\materia}}
+\fancyhead[R]{\small\color{ipnGris}\textit{\actividad}}
+\fancyfoot[C]{\small\color{ipnGris}\thepage}
+
+% --- Índice con hipervínculos ---
+\usepackage[
+  colorlinks=true,
+  linkcolor=ipnRojo,
+  urlcolor=ipnRojo,
+  citecolor=ipnRojo,
+  pdfborder={0 0 0}
+]{hyperref}
+
+% --- Otros paquetes ---
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{microtype}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{caption}
+\usepackage{parskip}
+\usepackage{enumitem}
+
+\captionsetup{
+  font=small,
+  labelfont={bf,color=ipnGris},
+  textfont=it
+}
+
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{1.2em}
+\emergencystretch 1em
+
+% ============================================================
+%  INICIO DEL DOCUMENTO
+% ============================================================
+\begin{document}
+
+% ----------------------------------------------------------
+% CARÁTULA
+% ----------------------------------------------------------
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+
+    \begin{minipage}[c]{0.45\textwidth}
+      \begin{flushleft}
+        \includegraphics[height=3.2cm,keepaspectratio]{../_compartido/img/ipn.jpg}
+      \end{flushleft}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.45\textwidth}
+      \begin{flushright}
+        \includegraphics[height=3.2cm,keepaspectratio]{../_compartido/img/ESCOM.png}
+      \end{flushright}
+    \end{minipage}
+
+    \vspace{0.4cm}
+    {\color{ipnRojo}\rule{\linewidth}{1.5pt}}
+    \vspace{0.3cm}
+
+    {\Large\bfseries Instituto Politécnico Nacional}\\[4pt]
+    {\large\bfseries\color{ipnGris} Escuela Superior de Cómputo}
+
+    \vspace{1.8cm}
+
+    {\small\color{ipnGris} Materia:}\\[4pt]
+    {\large\bfseries \materia}
+
+    \vspace{1.5cm}
+
+    {\small\color{ipnGris} Actividad / Tarea:}\\[6pt]
+    {\LARGE\bfseries\color{ipnRojo} \actividad}
+
+    \vfill
+
+    \begin{minipage}{0.75\linewidth}
+      \centering
+      \setlength{\arrayrulewidth}{0.5pt}
+      \renewcommand{\arraystretch}{1.5}
+      \begin{tabular}{rl}
+        \textbf{Alumno:}          & \alumno          \\
+        \textbf{Grupo:}           & \grupo           \\
+        \textbf{Profesor:}        & \profesor        \\
+        \textbf{Fecha de entrega:}& \fechaEntrega    \\
+      \end{tabular}
+    \end{minipage}
+
+    \vspace{1cm}
+    {\color{ipnRojo}\rule{\linewidth}{1.5pt}}
+
+  \end{center}
+\end{titlepage}
+
+% ----------------------------------------------------------
+% ÍNDICE
+% ----------------------------------------------------------
+\pagenumbering{roman}
+\setcounter{page}{1}
+\renewcommand{\contentsname}{Índice de Contenido}
+\tableofcontents
+\newpage
+
+% ----------------------------------------------------------
+% CONTENIDO
+% ----------------------------------------------------------
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\justifying
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%  INTRODUCCIÓN
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\section{Introducción}
+
+En el entorno productivo y empresarial actual, caracterizado por mercados altamente competitivos y
+cambiantes, la gestión eficiente del trabajo se ha convertido en un pilar fundamental para la
+sostenibilidad y el crecimiento de las organizaciones. La capacidad de planificar, organizar, dirigir
+y controlar los recursos disponibles determina, en gran medida, la productividad y la rentabilidad
+de cualquier empresa \cite{mrpeasy2023}.
+
+Ante esta realidad, la ingeniería industrial y la administración de operaciones han desarrollado
+diversas metodologías orientadas a optimizar los procesos de trabajo, reducir los desperdicios y
+maximizar el valor entregado al cliente. Entre estas herramientas destacan el SMED (Single Minute
+Exchange of Die), el Mapa de Flujo de Valor (VSM), los Indicadores Clave de Actuación (KPI) y la
+Metodología Kanban, cada una con enfoques y aplicaciones distintas, pero complementarias entre sí.
+
+El presente trabajo tiene como objetivo realizar una indagación de los conceptos fundamentales de la
+gestión de trabajo, así como de los métodos mencionados anteriormente, con la finalidad de
+comprender su importancia, sus principios de aplicación y los beneficios que aportan al ámbito
+productivo y de proyectos informáticos.
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%  INDAGACIÓN
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\section{Indagación}
+
+\subsection{Gestión de Trabajo}
+
+La gestión de trabajo es el proceso de administración y coordinación de los recursos productivos de
+una organización, que incluye la mano de obra, los equipos, los materiales, los métodos de
+producción y el capital financiero, con el fin de transformarlos de manera eficiente en bienes o
+servicios que satisfagan las necesidades del cliente \cite{mrpeasy2023}.
+
+De acuerdo con \cite{mrpeasy2023}, el papel de la gestión de la producción es armonizar todos los
+aspectos clave de la producción, reconocidos como las ``5 M'': los hombres (mano de obra), las
+máquinas (equipos), los métodos (procesos y rutas), los materiales (materias primas) y el dinero
+(financiación y activos). Una gestión eficaz y continua de estos elementos es clave para obtener
+ganancias de eficiencia, mantener el proceso productivo al día y mejorar los resultados.
+
+Entre los principales objetivos de la gestión de trabajo se encuentran \cite{mrpeasy2023,webyempresas2022}:
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item Optimizar el uso de los recursos disponibles para incrementar la productividad.
+  \item Reducir los costos asociados a los procesos productivos.
+  \item Garantizar la calidad de los productos y servicios entregados al cliente.
+  \item Supervisar y controlar continuamente el sistema de producción.
+  \item Planificar métodos nuevos que mejoren las áreas de trabajo.
+  \item Capacitar al personal para el uso eficiente de equipos y herramientas.
+\end{itemize}
+
+La gestión de trabajo abarca la planificación, dirección, control, organización y mejoramiento
+continuo de todos los sistemas que producen bienes y servicios, siendo una parte integral de la
+gestión empresarial general \cite{webyempresas2022}.
+
+\subsection{Métodos de Gestión de Trabajo}
+
+\subsubsection{Cambio de Matriz en Menos de 10 Minutos (SMED)}
+
+El SMED (Single Minute Exchange of Die) es una metodología desarrollada por el ingeniero japonés
+Shigeo Shingo en los años 50, en el contexto del sistema de producción Toyota. Su nombre, que
+puede traducirse como ``Cambio de Matriz en un Solo Dígito de Minutos'', refleja su objetivo
+principal: reducir el tiempo necesario para cambiar un equipo, molde o formato entre un proceso
+de producción y otro, a menos de 10 minutos \cite{randstad2026}.
+
+Esta metodología forma parte del conjunto de herramientas del Lean Manufacturing y surge como
+respuesta a la necesidad que tienen las empresas de producir mayor variedad de productos en lotes
+más pequeños, con plazos de entrega reducidos y costos de producción competitivos \cite{seas2025}.
+La esencia del sistema SMED consiste en convertir la mayor cantidad posible de actividades de
+cambio en operaciones ``externas'' (realizadas mientras el equipo está en marcha), y simplificar
+y agilizar los pasos restantes \cite{leanproduction}.
+
+La implementación del SMED se lleva a cabo mediante las siguientes etapas \cite{seas2025}:
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Observación y registro:} Filmación completa del proceso de cambio para identificar
+        todas las operaciones realizadas y el tiempo invertido.
+  \item \textbf{Separación de actividades internas y externas:} Las actividades internas son
+        aquellas que sólo pueden realizarse con la máquina detenida; las externas, las que pueden
+        hacerse mientras la máquina opera.
+  \item \textbf{Conversión de actividades internas en externas:} Se busca transformar la mayor
+        cantidad de operaciones internas en externas, reduciendo así el tiempo de paro.
+  \item \textbf{Mejora y estandarización:} Se optimizan todas las actividades restantes y se
+        documentan los procedimientos para asegurar la repetibilidad y la mejora continua.
+\end{enumerate}
+
+Los principales beneficios de aplicar SMED en una organización incluyen el aumento de la
+flexibilidad de la producción, la reducción de tiempos muertos y el incremento de la capacidad
+productiva, la disminución de los costos asociados a paradas de máquina y la facilitación de la
+producción en lotes más pequeños, lo que a su vez reduce los inventarios \cite{seas2025}.
+
+\subsubsection{Mapa de Flujo de Valor (VSM)}
+
+El Mapa de Flujo de Valor (Value Stream Mapping, VSM) es una herramienta visual del Lean
+Manufacturing que permite representar, analizar y mejorar los flujos de materiales e información
+a lo largo de toda la cadena de valor, desde el momento en que se recibe la orden del cliente
+hasta la entrega del producto o servicio terminado \cite{kaizen2025}.
+
+A diferencia de un diagrama de flujo convencional, el VSM no se centra únicamente en las
+actividades que agregan valor, sino que también pone en evidencia los inventarios, los transportes,
+los tiempos de espera y otros desperdicios que generan ineficiencias en el proceso \cite{kaizen2025}.
+Este enfoque lo convierte en una herramienta poderosa para identificar oportunidades de mejora y
+diseñar un estado futuro más eficiente y libre de desperdicios.
+
+Las etapas principales para diseñar e implementar un VSM son \cite{kaizen2025,adnlean2024}:
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Selección del producto o familia de productos:} Se elige el producto o conjunto de
+        productos de mayor impacto en el negocio sobre el cual se realizará el análisis.
+  \item \textbf{Mapeo del estado actual:} Se recorre físicamente el proceso productivo para
+        recolectar datos reales sobre inventarios, tiempos de ciclo, tiempos de espera, número
+        de operadores y capacidades de los equipos, representándolos con los símbolos estándar del VSM.
+  \item \textbf{Análisis e identificación de desperdicios:} Se examinan las fuentes de demora,
+        defectos de calidad, sobreproducción, transportes y movimientos innecesarios, inventarios
+        excesivos y cuellos de botella.
+  \item \textbf{Diseño del estado futuro:} Se crea un nuevo mapa que elimina los desperdicios
+        identificados y optimiza el flujo de valor, considerando flujos continuos, sistemas pull
+        y mecanismos como las tarjetas Kanban.
+  \item \textbf{Plan de implementación:} Se definen acciones concretas, responsables y plazos para
+        lograr la transición del estado actual al estado futuro deseado.
+\end{enumerate}
+
+El VSM ha demostrado ser una herramienta eficaz en la búsqueda de la excelencia operacional,
+permitiendo a las organizaciones reducir costos, aumentar la eficiencia y mejorar la productividad
+de manera sostenida \cite{kaizen2025}.
+
+\subsubsection{Indicador Clave de Actuación (KPI)}
+
+Los Indicadores Clave de Actuación, conocidos por sus siglas en inglés como KPI (Key Performance
+Indicators), son medidas cuantificables utilizadas para evaluar el rendimiento de una organización,
+departamento, proceso o individuo en relación con sus objetivos estratégicos y operativos \cite{escadia2024}.
+En otras palabras, los KPI revelan si las estrategias adoptadas para alcanzar una meta están
+surtiendo efecto y en qué medida \cite{asana2026}.
+
+Para que un KPI sea efectivo, debe cumplir con los criterios SMART, es decir, debe ser
+\textbf{S}pecífico, \textbf{M}edible, \textbf{A}lcanzable, \textbf{R}elevante y delimitado en el
+\textbf{T}iempo \cite{escadia2024}. Además, es fundamental que los KPI se definan antes de
+implementar una iniciativa, para poder dar seguimiento al progreso desde el inicio hasta el final
+\cite{asana2026}.
+
+Entre los tipos más comunes de KPI se encuentran los siguientes \cite{escadia2024,zendesk2026}:
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{KPIs financieros:} Miden el desempeño en función de la salud financiera de la
+        organización (rentabilidad, retorno de inversión, flujo de caja).
+  \item \textbf{KPIs de productividad:} Evalúan la eficiencia con que se utilizan los recursos
+        humanos y materiales en el proceso productivo.
+  \item \textbf{KPIs de calidad:} Miden la conformidad de los productos o servicios con las
+        especificaciones y estándares definidos.
+  \item \textbf{KPIs de capacidad:} Indican la cantidad de trabajo que una organización puede
+        realizar en un período de tiempo determinado.
+  \item \textbf{KPIs de satisfacción del cliente:} Evalúan el nivel de cumplimiento de las
+        expectativas del cliente (tasa de retención, NPS, tiempo de resolución).
+\end{itemize}
+
+La correcta implementación de los KPI ofrece a las organizaciones la capacidad de detectar cambios
+en el entorno, adaptar su enfoque estratégico y fomentar una cultura de innovación y excelencia
+orientada a la mejora continua \cite{escadia2024}.
+
+\subsubsection{Metodología Kanban}
+
+La Metodología Kanban es un sistema de gestión visual del trabajo que permite comprender el estado
+general de un proyecto y todas las tareas vinculadas al mismo de un solo vistazo, sin necesidad
+de reuniones ni interrupciones constantes \cite{cegos2026}. La palabra ``Kanban'' proviene del
+japonés: ``Kan'' (visual) y ``Ban'' (tarjeta), lo que refleja la esencia de este método \cite{apd2024}.
+
+Kanban fue desarrollado originalmente por el ingeniero Taiichi Ohno en Toyota a finales de los años
+40, como parte del sistema de producción just-in-time (JIT), con el objetivo de controlar el
+inventario de piezas en la línea de fabricación de forma eficiente y sin desperdicios \cite{cegos2026}.
+Décadas después, sus principios han sido extrapolados con gran éxito al trabajo del conocimiento y
+a la gestión de proyectos en todo tipo de organizaciones.
+
+Los cuatro principios fundamentales de Kanban son \cite{atlassian2026}:
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Visualizar el flujo de trabajo:} Mediante un tablero dividido en columnas que
+        representan las fases del proceso (``Por hacer'', ``En curso'', ``Completado''), con tarjetas
+        que avanzan de una columna a otra conforme se avanza en el trabajo.
+  \item \textbf{Limitar el trabajo en curso (WIP):} Establecer un máximo de tareas activas en cada
+        columna para evitar la sobrecarga del equipo, identificar cuellos de botella y mantener un
+        flujo constante y equilibrado.
+  \item \textbf{Gestionar el flujo:} Identificar y eliminar desperdicios, minimizar los tiempos de
+        espera y maximizar la eficiencia en cada etapa del proceso.
+  \item \textbf{Mejorar continuamente:} El proceso de implementación de Kanban no exige cambios
+        disruptivos; se centra en realizar mejoras graduales e incrementales sobre los procesos
+        existentes \cite{atlassian2026}.
+\end{enumerate}
+
+Entre los principales beneficios de Kanban destacan la transparencia del proceso, la mayor
+predictibilidad de los tiempos de entrega, la evitación de la sobreproducción y el uso ineficiente
+de recursos, así como la flexibilidad para adaptarse ágilmente a tareas imprevistas sin sacrificar
+la calidad del trabajo \cite{apd2024}.
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%  CONCLUSIÓN
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\section{Conclusión}
+
+La gestión de trabajo es un área fundamental en cualquier organización que busque ser productiva,
+competitiva y adaptable. A lo largo de esta indagación se ha podido observar que no existe un único
+método o herramienta que resuelva todos los problemas de gestión; en cambio, existe un conjunto
+robusto de metodologías complementarias que, bien combinadas, potencian significativamente los
+resultados de cualquier proceso.
+
+El SMED aporta la capacidad de responder con agilidad a los cambios en la demanda mediante la
+reducción drástica de los tiempos de preparación de máquinas, lo que se traduce en mayor
+flexibilidad productiva y menores inventarios. El Mapa de Flujo de Valor ofrece una visión global
+y honesta del proceso, haciendo visibles los desperdicios ocultos y abriendo el camino hacia un
+estado futuro más eficiente. Los KPI proporcionan el lenguaje cuantificable necesario para evaluar
+el desempeño organizacional con objetividad, orientar la toma de decisiones estratégicas y fomentar
+una cultura de mejora continua. Finalmente, la Metodología Kanban introduce una forma visual,
+colaborativa e incremental de gestionar el trabajo, reduciendo la incertidumbre, mejorando la
+comunicación del equipo y aumentando la capacidad de respuesta ante los cambios.
+
+En conjunto, estos métodos no sólo son aplicables a entornos industriales clásicos, sino que han
+demostrado su vigencia y efectividad en proyectos informáticos, de desarrollo de software y de
+gestión del conocimiento, ámbito en el cual se desenvuelve la ingeniería en sistemas computacionales.
+Su estudio y aplicación contribuyen de manera directa a la formulación y evaluación de proyectos
+más eficientes, sostenibles y orientados a la generación de valor.
+
+% ----------------------------------------------------------
+% REFERENCIAS  (Estilo IEEE)
+% ----------------------------------------------------------
+\newpage
+\bibliographystyle{IEEEtran}
+\bibliography{bibliografia}
+
+\end{document}
+
